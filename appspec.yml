@@ -1,15 +1,19 @@
 version: 0.0
 os: linux
 files:
-  - source: /tmp/codigo
-    destination: /opt/tomcat
+  - source: /mi-repositorio/build/libs/
+    destination: /opt/tomcat/webapps/
 hooks:
-  ApplicationStop:
-    - location: codedeploy-scripts/stop.sh
+  BeforeInstall:
+    - location: codedeploy-scripts/install_tomcat.sh
       timeout: 300
       runas: root
   AfterInstall:
     - location: codedeploy-scripts/after_install.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: codedeploy-scripts/stop.sh
       timeout: 300
       runas: root
   ApplicationStart:

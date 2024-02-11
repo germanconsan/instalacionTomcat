@@ -4,19 +4,20 @@ files:
   - source: /build/libs/
     destination: /opt/tomcat/webapps/
 hooks:
+  ApplicationStop:
+      - location: codedeploy-scripts/stop.sh
+        timeout: 300
+        runas: root
   BeforeInstall:
     - location: codedeploy-scripts/beforeinstall.sh
-      timeout: 300
-      runas: root
-  AfterInstall:
-    - location: codedeploy-scripts/afterinstall.sh
-      timeout: 300
-      runas: root
-  ApplicationStop:
-    - location: codedeploy-scripts/stop.sh
       timeout: 300
       runas: root
   ApplicationStart:
     - location: codedeploy-scripts/start.sh
       timeout: 300
       runas: root
+  AfterInstall:
+    - location: codedeploy-scripts/afterinstall.sh
+      timeout: 300
+      runas: root
+  

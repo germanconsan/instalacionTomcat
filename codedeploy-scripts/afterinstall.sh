@@ -1,3 +1,7 @@
 #!/bin/bash
 
-sudo chown -R tomcat:tomcat /opt/tomcat/webapps/holamundo-0.0.1-plain
+echo "Instalación realizada correctamente..."
+
+systemctl restart tomcat
+
+echo "TomCat Reiniciado correctamente..."

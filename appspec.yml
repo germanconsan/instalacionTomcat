@@ -1,11 +1,11 @@
 version: 0.0
 os: linux
 files:
-  - source: /mi-repositorio/build/libs/
+  - source: /
     destination: /opt/tomcat/webapps/
 hooks:
   BeforeInstall:
-    - location: codedeploy-scripts/install_tomcat.sh
+    - location: codedeploy-scripts/before_install.sh
       timeout: 300
       runas: root
   AfterInstall:

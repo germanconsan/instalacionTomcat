@@ -5,11 +5,11 @@ files:
     destination: /opt/tomcat/webapps/
 hooks:
   BeforeInstall:
-    - location: codedeploy-scripts/before_install.sh
+    - location: codedeploy-scripts/beforeinstall.sh
       timeout: 300
       runas: root
   AfterInstall:
-    - location: codedeploy-scripts/after_install.sh
+    - location: codedeploy-scripts/afterinstall.sh
       timeout: 300
       runas: root
   ApplicationStop:
@@ -20,4 +20,3 @@ hooks:
     - location: codedeploy-scripts/start.sh
       timeout: 300
       runas: root
-      

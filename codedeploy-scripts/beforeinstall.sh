@@ -18,4 +18,4 @@ echo "Ubicación actual después de cambiar al directorio del proyecto: $(pwd)"
 ls -la
 
 # Ejecutar el proceso de compilación y despliegue con Gradle
-gradle clean build
+sudo gradle clean build

@@ -1,19 +1,21 @@
 #!/bin/bash
 
-# Instalar dependencias
+# Instalar JDK y Gradle (si no están instalados)
 apt-get update
-apt-get install -y unzip
+apt-get install -y openjdk-8-jdk gradle
 
-# Descargar e instalar Apache Tomcat
-mkdir /opt/tomcat
-cd /opt/tomcat
-wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.56/bin/apache-tomcat-9.0.56.zip -O tomcat.zip
-unzip tomcat.zip
-mv apache-tomcat-*/* /opt/tomcat/
-rm -rf apache-tomcat-*
+# Imprimir la ubicación actual antes de cambiar al directorio del proyecto
+echo "Ubicación actual antes de cambiar al directorio del proyecto: $(pwd)"
 
-# Cambiar permisos
-chmod +x /opt/tomcat/bin/*.sh
+# Cambiar al directorio del proyecto después de la clonación por CodeDeploy
+# Esto dependerá de cómo CodeDeploy organiza los archivos
+cd /ruta/donde/codeDeploy/clono/tu/repo
 
-# Iniciar Tomcat
-/opt/tomcat/bin/startup.sh
+# Imprimir la ubicación actual después de cambiar al directorio del proyecto
+echo "Ubicación actual después de cambiar al directorio del proyecto: $(pwd)"
+
+# Imprimir el contenido del directorio para ayudar a determinar la estructura
+ls -la
+
+# Ejecutar el proceso de compilación y despliegue con Gradle
+gradle clean build

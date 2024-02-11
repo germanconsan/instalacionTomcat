@@ -12,9 +12,6 @@ fi
 # Imprimir la ubicación actual antes de cambiar al directorio del proyecto
 echo "Ubicación actual antes de cambiar al directorio del proyecto: $(pwd)"
 
-# Cambiar al directorio del proyecto después de la clonación por CodeDeploy
-# Esto dependerá de cómo CodeDeploy organiza los archivos
-cd /opt/codedeploy-agent
 
 # Imprimir la ubicación actual después de cambiar al directorio del proyecto
 echo "Ubicación actual después de cambiar al directorio del proyecto: $(pwd)"
@@ -25,5 +22,9 @@ ls -la
 chmod -R +x /opt/codedeploy-agent
 chown -R 2450:users /opt/codedeploy-agent
 
+
+cd /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive/
+
+
 # Ejecutar el proceso de compilación y despliegue con Gradle
-gradle clean build --stacktrace
+gradle war

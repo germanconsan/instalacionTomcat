@@ -4,5 +4,4 @@ plugins {
 
 war {
     archiveFileName = 'appTomcat.war'
-    destinationDir = file('/opt/tomcat/webapps/')
 }

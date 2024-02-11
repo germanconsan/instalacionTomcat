@@ -28,4 +28,4 @@ cd /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/dep
 
 
 # Ejecutar el proceso de compilación y despliegue con Gradle Wrapper
-./gradlew clean build
+./gradlew

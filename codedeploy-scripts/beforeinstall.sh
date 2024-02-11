@@ -26,5 +26,6 @@ chown -R 2450:users /opt/codedeploy-agent
 cd /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive/
 
 
-# Ejecutar el proceso de compilación y despliegue con Gradle
-gradle war
+
+# Ejecutar el proceso de compilación y despliegue con Gradle Wrapper
+./gradlew clean build

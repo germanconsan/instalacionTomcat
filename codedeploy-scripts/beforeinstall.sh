@@ -9,7 +9,7 @@ echo "Ubicación actual antes de cambiar al directorio del proyecto: $(pwd)"
 
 # Cambiar al directorio del proyecto después de la clonación por CodeDeploy
 # Esto dependerá de cómo CodeDeploy organiza los archivos
-cd /ruta/donde/codeDeploy/clono/tu/repo
+cd /opt/codedeploy-agent
 
 # Imprimir la ubicación actual después de cambiar al directorio del proyecto
 echo "Ubicación actual después de cambiar al directorio del proyecto: $(pwd)"

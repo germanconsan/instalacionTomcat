@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# Detener Tomcat antes de copiar el archivo WAR
+# Detener Tomcat antes de copiar los archivos compilados
 /opt/tomcat/bin/shutdown.sh
 
-# Copiar el archivo WAR al directorio de despliegue de Tomcat
-cp /opt/tomcat/webapps/tu-aplicacion.war /opt/tomcat/webapps/
+# Copiar los archivos compilados al directorio de despliegue de Tomcat
+cp -r /opt/codedeploy-agent/tu-proyecto/build/* /opt/tomcat/webapps/
+
+# Iniciar Tomcat
+/opt/tomcat/bin/startup.sh

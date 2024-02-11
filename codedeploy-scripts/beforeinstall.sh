@@ -25,4 +25,5 @@ cd /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/dep
 sudo chmod -R +w ./
 
 # Ejecutar el proceso de compilación y despliegue con Gradle Wrapper
+chmod +x gradlew
 sudo ./gradlew war

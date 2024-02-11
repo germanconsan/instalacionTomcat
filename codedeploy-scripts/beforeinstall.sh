@@ -19,13 +19,10 @@ echo "Ubicación actual después de cambiar al directorio del proyecto: $(pwd)"
 # Imprimir el contenido del directorio para ayudar a determinar la estructura
 ls -la
 
-chmod -R +x /opt/codedeploy-agent
-chown -R 2450:users /opt/codedeploy-agent
-
 
 cd /opt/codedeploy-agent/deployment-root/$DEPLOYMENT_GROUP_ID/$DEPLOYMENT_ID/deployment-archive/
 
-
+sudo chmod -R +w ./
 
 # Ejecutar el proceso de compilación y despliegue con Gradle Wrapper
-./gradlew
+sudo ./gradlew war

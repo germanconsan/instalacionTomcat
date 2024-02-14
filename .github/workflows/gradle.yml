@@ -32,7 +32,11 @@ jobs:
 
     # Configure Gradle for optimal use in GiHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
-   
+    - name: Limpiar caché
+    - run: |
+        git clean -fdx
+        rm -rf $HOME/.gradle/caches/
+        rm -rf .gradle/
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3.1.0 # v3.0.0
     - run:  chmod -x ./gradlew

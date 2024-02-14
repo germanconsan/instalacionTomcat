@@ -38,7 +38,8 @@ jobs:
     - run:  chmod -x ./gradlew
     - name: Build with Gradle Wrapper
       run:  ./gradlew build
-
+    - name: Limpiar la caché
+      uses: gradle/actions/setup-gradle@v3.1.0 # v3.0.0
     - name: Limpiar caché
     - run: |
         git clean -fdx

@@ -38,13 +38,7 @@ jobs:
     - run:  chmod -x ./gradlew
     - name: Build with Gradle Wrapper
       run:  ./gradlew build
-    - name: Limpiar la caché
-      uses: gradle/actions/setup-gradle@v3.1.0 # v3.0.0
-    - name: Limpiar caché
-    - run: |
-        git clean -fdx
-        rm -rf $HOME/.gradle/caches/
-        rm -rf .gradle/
+   
 
     # NOTE: The Gradle Wrapper is the default and recommended way to run Gradle (https://docs.gradle.org/current/userguide/gradle_wrapper.html).
     # If your project does not have the Gradle Wrapper configured, you can use the following configuration to run Gradle with a specified version.
